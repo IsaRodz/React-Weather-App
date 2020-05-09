@@ -1,0 +1,148 @@
+$prim: #282c34;
+$second: #32c8e2;
+
+.app {
+    position: relative;
+    .errMessage {
+        color: red;
+        text-align: center;
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $prim;
+    padding: 20px 10px;
+    width: 100%;
+    form {
+        display: block;
+        margin: 0;
+        width: 100%;
+        max-width: 450px;
+        display: flex;
+        input,
+        button {
+            font-family: inherit;
+            font-size: 14px;
+            padding: 10px;
+            outline: none;
+            border-radius: 10px;
+            transition: 300ms;
+            display: inline-block;
+        }
+
+        input {
+            flex-grow: 1;
+            margin-right: -30px;
+            border: none;
+            background: rgba(240, 240, 240, 0.15);
+            color: #fff;
+            &:focus {
+                background: rgba(255, 255, 255, 0.16);
+            }
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        button {
+            border: none;
+            padding: 12px 18px;
+            cursor: pointer;
+            font-weight: 500;
+            background: $second;
+            color: $prim;
+            &[disabled] {
+                cursor: none !important;
+                background: rgb(223, 223, 223);
+                color: rgb(177, 177, 177);
+            }
+        }
+    }
+}
+
+.row {
+    color: $prim;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 70px;
+    position: relative;
+    align-items: center;
+    margin-top: 20px;
+    @media (max-width: 600px) {
+        grid-gap: 20px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        height: 15vmin;
+        width: 1px;
+        background-color: rgba($prim, 0.3);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .location {
+        text-align: right;
+        .city {
+            font-size: 10vmin;
+        }
+        .country {
+            font-size: 6vmin;
+        }
+    }
+    .climate {
+        .temp {
+            font-size: 15vmin;
+            position: relative;
+            p {
+                font-weight: 700;
+                margin: 0 0 -1em;
+                display: inline-block;
+            }
+            span {
+                font-size: 3vmin;
+            }
+        }
+        .feelsLike {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        .weather {
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+    }
+}
+
+.flex {
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 600px) {
+        p {
+            span {
+                display: none;
+            }
+            margin: 0 0.7em 0;
+        }
+    }
+    p {
+        display: flex;
+        align-items: center;
+        color: rgba($prim, 0.8);
+        margin: 0 0.5em;
+        svg {
+            margin-right: 3px;
+            max-width: 25px;
+            max-height: 25px;
+            fill: rgba($prim, 0.8);
+        }
+    }
+}
