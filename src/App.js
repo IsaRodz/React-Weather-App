@@ -4,6 +4,8 @@ import Nav from "./components/Nav";
 import Weather from "./components/Weather";
 import Message from "./components/Message";
 
+import map from "./icons/map.svg";
+
 function App() {
     useEffect(() => getWeatherByLocation(), []);
 
@@ -48,16 +50,14 @@ function App() {
                 <Weather weather={weather} />
             ) : (
                 <div className="warning">
-                    <svg viewBox="0 0 14 14">
-                        <path
-                            d="M7 0C3.15 0 0 3.15 0 7C0 10.85 3.15 14 7 14C10.85 14 14 10.85 14 7C14 3.15 10.85 0 7 0ZM6.45 3H7.55V8.5H6.45V3V3ZM7 11.5C6.6 11.5 6.25 11.15 6.25 10.75C6.25 10.35 6.6 10 7 10C7.4 10 7.75 10.35 7.75 10.75C7.75 11.15 7.4 11.5 7 11.5Z"
-                            fill="white"
-                        />
-                    </svg>
-
-                    <h2>No hemos podido obtener tu ubicación :(</h2>
+                    <img src={map} alt="" />
                     <p>
-                        No hay problema, puedes buscar el clima de otra ciudad
+                        Permite el acceso a tu ubicación para poder brindarte el
+                        clima en dónde te encuentres.
+                    </p>
+                    <p>
+                        También puedes escribir una ciudad en la barra de
+                        búsqueda.
                     </p>
                 </div>
             )}
