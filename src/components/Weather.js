@@ -19,7 +19,7 @@ function Weather({ weather }) {
                     <div className="weather">
                         {weather.weather[0].description}
                         <img
-                            src={`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`}
+                            src={`http://rodziriarte.000webhostapp.com/weather-icons/${weather.weather[0].icon}.png`}
                             alt={weather.weather[0].description}
                         />
                     </div>
