@@ -7,7 +7,6 @@ function Weather({ weather }) {
                 <div className="location">
                     <div className="city">{weather.name}</div>
                     <div className="country">{weather.sys.country}</div>
-                    {/* <p>{weather.dt}</p> */}
                 </div>
                 <div className="climate">
                     <div className="temp">
@@ -20,7 +19,7 @@ function Weather({ weather }) {
                     <div className="weather">
                         {weather.weather[0].description}
                         <img
-                            src={"/icons/" + weather.weather[0].icon + ".png"}
+                            src={"icons/" + weather.weather[0].icon + ".png"}
                             alt={weather.weather[0].description}
                         />
                     </div>
