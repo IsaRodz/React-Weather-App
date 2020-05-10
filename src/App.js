@@ -52,7 +52,6 @@ function App() {
             });
         } else {
             let data = await response.json();
-            data.dt = new Date(data.dt).toLocaleTimeString();
             setWeather(data);
         }
     };
