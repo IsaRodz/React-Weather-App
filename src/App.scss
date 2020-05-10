@@ -191,7 +191,6 @@ nav {
     margin: 5vw;
     color: #fff;
     pointer-events: none;
-    opacity: 0.8;
 
     svg,
     img {
@@ -199,12 +198,18 @@ nav {
         max-width: 70%;
         pointer-events: none;
     }
-    h2 {
-        font-size: 1.5em;
-        font-weight: 500;
-    }
     p {
+        opacity: 0.9;
         font-weight: 300;
         font-size: 1.15em;
+        @media (max-width: 768px) {
+            font-size: 1em;
+        }
+    }
+}
+.swal2-popup.swal2-toast {
+    box-shadow: 0 0 0.625em rgba(0, 0, 0, 0.2) !important;
+    .swal2-content {
+        margin-left: 7px !important;
     }
 }
