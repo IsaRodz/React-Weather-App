@@ -1,16 +1,32 @@
 $prim: #282c34;
-$second: #32c8e2;
+$second: #ffffff;
+$icon-size: 40px;
 
 .app {
     position: relative;
     .errMessage {
-        color: red;
+        font-size: 14px;
+        background: #fff;
+        padding: 1em;
+        color: #f44336;
         text-align: center;
-        width: 90%;
+        width: fit-content;
         margin: 20px auto;
+        border-radius: 10px;
+        animation: message 300ms;
+        transform-origin: top;
     }
 }
-
+@keyframes message {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 nav {
     display: flex;
     align-items: center;
@@ -66,29 +82,43 @@ nav {
 }
 
 .row {
-    color: $prim;
+    color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 70px;
     position: relative;
     align-items: center;
     margin-top: 20px;
-    @media (max-width: 600px) {
+    @media (max-width: 520px) {
         grid-gap: 20px;
+        grid-template-columns: auto;
+        text-align: center;
+        .location {
+            display: flex;
+            justify-content: center;
+            .city {
+                margin-right: 10px;
+            }
+        }
+        .weather {
+            justify-content: center;
+        }
+        &::before {
+            display: none;
+        }
     }
     &::before {
         content: "";
         position: absolute;
         height: 15vmin;
         width: 1px;
-        background-color: rgba($prim, 0.3);
-        left: 50%;
-        transform: translateX(-50%);
+        background-color: rgba(#fff, 0.3);
     }
     .location {
         text-align: right;
         .city {
             font-size: 10vmin;
+            line-height: 1;
         }
         .country {
             font-size: 6vmin;
@@ -115,7 +145,16 @@ nav {
             text-transform: uppercase;
             font-weight: 500;
             font-size: 14px;
-            opacity: 0.5;
+            display: flex;
+            align-items: center;
+            color: rgba(#fff, 0.5);
+            height: $icon-size;
+            img {
+                margin-left: 10px;
+                max-width: $icon-size;
+                max-height: $icon-size;
+                display: block;
+            }
         }
     }
 }
@@ -125,6 +164,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: rgba(#fff, 0.8);
     @media (max-width: 600px) {
         p {
             span {
@@ -136,13 +176,33 @@ nav {
     p {
         display: flex;
         align-items: center;
-        color: rgba($prim, 0.8);
         margin: 0 0.5em;
         svg {
             margin-right: 3px;
             max-width: 25px;
             max-height: 25px;
-            fill: rgba($prim, 0.8);
+            fill: rgba(#fff, 0.8);
         }
+    }
+}
+
+.warning {
+    text-align: center;
+    margin: 5vw;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0.8;
+
+    svg {
+        width: 120px;
+        max-width: 60%;
+    }
+    h2 {
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+    p {
+        font-weight: 300;
+        font-size: 1.15em;
     }
 }

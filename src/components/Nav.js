@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Nav(props) {
-    const [city, setCity] = useState("Lima");
+    const [city, setCity] = useState("");
 
     const search = e => {
         e.preventDefault();
